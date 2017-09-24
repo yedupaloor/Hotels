@@ -1,0 +1,11 @@
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\Tcs.Nitin.Core.dll.config
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\Tcs.Nitin.Core.dll
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\Tcs.Nitin.Core.pdb
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\EntityFramework.SqlServer.dll
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\EntityFramework.xml
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\bin\Release\EntityFramework.SqlServer.xml
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\obj\Release\Tcs.Nitin.Core.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\obj\Release\Tcs.Nitin.Core.csproj.CoreCompileInputs.cache
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\obj\Release\Tcs.Nitin.Core.dll
+c:\users\administrator\documents\visual studio 2017\Projects\Tcs.Nitin\Tcs.Nitin.Core\obj\Release\Tcs.Nitin.Core.pdb
