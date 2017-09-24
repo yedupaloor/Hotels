@@ -1,0 +1,13 @@
+﻿<div ng-show="error">{{error}}</div>
+<div ng-show="hotel">
+    <h3>{{ hotel.Name }}</h3>
+    <div class="row"><address> {{ hotel.Address }}</address></div>
+    <div class="row">{{ hotel.Description }}</div>
+    <br />
+    <div class="row">
+        <div class="gallery_product col-md-4" ng-repeat="details in hotel.HotelDetails">
+            <img ng-src="{{details.ImageUrl}}" class="img-responsive" />
+        </div>
+    </div>
+</div>
+<a class="btn" href="../">Back to list</a>

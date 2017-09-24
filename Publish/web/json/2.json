@@ -1,0 +1,19 @@
+﻿{
+
+  "$id": "1",
+  "HotelDetails": [
+    {
+      "$id": "2",
+      "Hotel": {
+        "$ref": "1"
+      },
+      "Id": 3,
+      "ImageUrl": "https://www.cleartrip.com/places/hotels/2066/206634/images/Ava2_w.jpg"
+    }
+  ],
+  "Id": 2,
+  "Name": "Radisson Blu Kochi",
+  "Address": "S.A. Road, Elamkulam Junction | Kadavanthara, Ernakulam, Kochi (Cochin) 682020",
+  "Description": "The contemporary hotel design and concept marries the drama of the exotic east with the whimsy of the west, offering travelers a new vision of modern luxury. A life-style hotel in the heart of Cochin city that is closest to the International Airport and with unmatched ease of access to the commercial hubs and heritage sites of Cochin. Spoil yourself at this hip and trendy hotel with a new vision of modern luxury and design. Strategically located in the heart of Cochin and 2 kms away from the Railway and Bus stations. In close proximity to the commercial hubs like MG Road, Infopark, Smart City and heritage sites of Cochin. Cochin Int'l Airport: 32 kms, 45 minutes."
+
+}
