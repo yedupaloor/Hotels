@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/hotels")
+
+<div ng-app="Hotels" ng-controller="HotelsController" class="container" ng-cloak>
+    <div ng-show="error">{{error}}</div>
+    <div ng-show="hotels">
+        <h2>Hotels</h2>
+        <div>
+            <table class="table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th></th>
+                </tr>
+
+                <tr ng-repeat="hotel in hotels">
+                    <td class="col-md-3" ng-bind="hotel.Id">{{ hotel.Name }}</td>
+                    <td class="col-md-8">{{ hotel.Address }}</td>
+                    <td class="col-md-1">
+                        <button ng-model="$scope.Id" ng-click="showDetails(hotel.Id)">Details</button>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    <div ng-show="hotel.Id">
+        <h3>{{ hotel.Name }}</h3>
+        <div class="row"><address> {{ hotel.Address }}</address></div>
+        <div class="row">{{ hotel.Description }}</div>
+        <br />
+        <div class="row">
+            <div class="gallery_product col-md-4" ng-repeat="details in hotel.HotelDetails">
+                <img ng-src="{{details.ImageUrl}}" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
