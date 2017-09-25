@@ -1,3 +1,3 @@
 ﻿(function () {
-    var app = angular.module("Hotels", ['angular-loading-bar']);
+    var app = angular.module("Hotels", ["angular-loading-bar", "ngTable"]);
 }());

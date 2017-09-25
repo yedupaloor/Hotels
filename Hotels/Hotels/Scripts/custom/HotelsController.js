@@ -1,9 +1,10 @@
 ﻿(function () {
     var module = angular.module("Hotels");
 
-    var HotelsController = function ($scope, Hotel) {
+    var HotelsController = function ($scope, Hotel, NgTableParams ) {
         var onHotelLoadComplete = function (data) {
-            $scope.hotels = data;
+            $scope.hotels = new NgTableParams({}, { dataset: data });
+            //$scope.hotels = data;
         }
         var onError = function (reason) {
             $scope.error = "Something went wrong!";
@@ -18,6 +19,6 @@
         }
     };
 
-    module.controller("HotelsController", ["$scope", "Hotel", HotelsController]);
+    module.controller("HotelsController", ["$scope", "Hotel", "NgTableParams", HotelsController]);
 
 }());

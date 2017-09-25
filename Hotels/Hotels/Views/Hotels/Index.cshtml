@@ -3,34 +3,29 @@
 }
 @Scripts.Render("~/bundles/hotels")
 
+@section scripts {
+    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+}
 <div ng-app="Hotels" ng-controller="HotelsController" class="container" ng-cloak>
     <div ng-show="error">{{error}}</div>
     <div ng-show="hotels">
         <h2>Hotels</h2>
         <div>
-            <table class="table">
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Address
-                    </th>
-                    <th></th>
-                </tr>
 
-                <tr ng-repeat="hotel in hotels">
-                    <td class="col-md-3" ng-bind="hotel.Id">{{ hotel.Name }}</td>
-                    <td class="col-md-8">{{ hotel.Address }}</td>
+            <table ng-table="hotels" class="table" show-filter="true">
+                <tr ng-repeat="hotel in $data">
+                    <td title="'Name'" class="col-md-3" filter="{ Name: 'text'}">{{ hotel.Name }}</td>
+                    <td title="'Address'" class="col-md-8" filter="{ Address: 'text'}">{{ hotel.Address }}</td>
                     <td class="col-md-1">
-                        <button ng-model="$scope.Id" ng-click="showDetails(hotel.Id)">Details</button>
+                        <a ng-href="#" ng-click="showDetails(hotel.Id)">Details</a>
                     </td>
                 </tr>
-
-
             </table>
+
         </div>
     </div>
+    <br />
     <div ng-show="hotel.Id">
         <h3>{{ hotel.Name }}</h3>
         <div class="row"><address> {{ hotel.Address }}</address></div>
