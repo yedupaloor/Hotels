@@ -14,6 +14,6 @@ namespace Hotels
         }
         public DbSet<Hotel> Hotel { get; set; }
         public DbSet<HotelDetails> HotelDetail { get; set; }
-
+        public DbSet<HotelComments> Comment { get; set; }
     }
 }
