@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/hotels")
+
+@section scripts {
+    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+}
+<div ng-app="Hotels" ng-controller="HotelsController" class="container">
+    <div ng-show="error">{{error}}</div>
+    <div ng-show="hotels" ng-cloak>
+        <h2>Hotels</h2>
+        <div>
+
+            <table ng-table="hotels" class="table" show-filter="true">
+                <tr ng-repeat="hotel in $data">
+                    <td title="'Name'" class="col-md-3" filter="{ Name: 'text'}">{{ hotel.Name }}</td>
+                    <td title="'Address'" class="col-md-8" filter="{ Address: 'text'}">{{ hotel.Address }}</td>
+                    <td class="col-md-1">
+                        <a ng-href="#" ng-click="showDetails(hotel.Id)">Details</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <br />
+    <div ng-show="hotel.Id" ng-cloak>
+        <h3>{{ hotel.Name }}</h3>
+        <div class="row"><address> {{ hotel.Address }}</address></div>
+        <div class="row">{{ hotel.Description }}</div>
+        <br />
+        <div class="row">
+            <div class="gallery_product col-md-4" ng-repeat="details in hotel.HotelDetails">
+                <img ng-src="{{details.ImageUrl}}" class="img-responsive" />
+            </div>
+        </div>
+        <a ng-href="#" ng-click="loadHotelComments(hotel.Id)">Comments</a>
+        <div ng-show="hotelComments" ng-cloak>
+            <h2>Comments</h2>
+            <div>
+                <table ng-table="hotelComments" class="table">
+                    <tr ng-repeat="comment in $data | orderBy:'-CreatedOn'">
+                        <td class="col-md-12">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="pull-left">{{ comment.Name }}</div>
+                                        <div class="pull-right">{{ comment.CreatedOn }}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="pull-left">{{ comment.Comment }}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <button ng-click="add()" class="btn btn-success" ng-hide="newComment.Id == '0'">Post Comment</button>
+            <button ng-click="cancel()" class="btn btn-success" ng-show="newComment.Id == '0'">Cancel</button>
+        </div>
+
+    </div>
+    <div ng-show="newComment.Id == '0'" ng-cloak>
+        <div>
+            <h2>Add Comment</h2>
+        </div>
+        <div class="row">
+            <label for="name" class="col-md-1">Name</label>
+            <input type="text" data-ng-model="newComment.Name" class="form-control" required placeholder="Enter name." />
+        </div>
+        <div class="row">
+            <label for="email" class="col-md-1">Email</label>
+            <input type="text" data-ng-model="newComment.Email" class="form-control" required placeholder="Enter email." />
+        </div>
+        <div class="row">
+            <label for="comment" class="col-md-1">Comment</label>
+            <textarea data-ng-model="newComment.Comment" class="form-control" rows="3" id="comment" required placeholder="Enter comment."></textarea>
+        </div>
+        <br />
+        <div>
+            <button ng-click="postComment()" class="btn btn-success pull-right" style="margin-left:5px;">Post</button>
+            <button ng-click="clearComment()" class="btn btn-success pull-right">Clear</button>
+        </div>
+
+    </div>
+
+
+</div>
